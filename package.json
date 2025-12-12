@@ -1,0 +1,28 @@
+{
+	"name": "theme_name",
+	"version": "1.0.0",
+	"description": "theme_name",
+	"main": "tailwind.config.js",
+	"scripts": {
+		"dev": "tailwindcss -i ./assets/css/style.css -o assets/css/main.css --minify --watch",
+		"build": "wp-scripts build",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js",
+		"start": "wp-scripts start"
+	},
+	"repository": {
+		"type": "git"
+	},
+	"author": "",
+	"license": "MIT",
+	"devDependencies": {
+		"@wordpress/components": "^30.1.0",
+		"@wordpress/scripts": "^30.20.0",
+		"autoprefixer": "^10.4.21",
+		"postcss": "^8.5.6",
+		"postcss-cli": "^11.0.1",
+		"postcss-import": "^16.1.1",
+		"postcss-nesting": "^13.0.2",
+		"tailwindcss": "^4.1.11"
+	}
+}

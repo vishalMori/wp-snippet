@@ -1,0 +1,14 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-theme-slug-card-repeater {
+  border: 1px dotted #213745;
+  max-width: 1400px;
+  border-radius: 10px;
+  .richtext-border {
+    border: 1px dotted;
+  }
+}

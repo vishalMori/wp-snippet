@@ -1,0 +1,16 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "theme-slug/card-repeater",
+	"version": "0.1.0",
+	"title": "Card Repeater",
+	"category": "text",
+	"description": "This demo card repeater block.",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "theme-slug",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css"
+}
