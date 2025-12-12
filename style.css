@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+/*
+Theme Name: Theme_Name
+Author: Theme_Author
+Author URI: Author_URL
+Description: Custom Theme Description.
+Requires at least: Your WordPress Version
+Tested up to: WordPress Version
+Requires PHP: 8.2 (Recomanded)
+Version: 1.0
+License: GNU General Public License or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: theme-textdomain
+Tags: add your custom tags.
+*/
+
+/* Prevent Multiple Submissions */
+.submitting button[type="submit"] {
+  pointer-events: none;
+}
