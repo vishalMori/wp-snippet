@@ -71,3 +71,35 @@ add_filter( 'wp_handle_upload_prefilter', 'theme_prefix_limit_image_upload_size'
  * Disable the big image size threshold.
  */
 add_filter( 'big_image_size_threshold', '__return_false' );
+
+/**
+ * Disable comments everywhere
+ */
+function theme_prefix_disable_comments_sitewide() {
+
+	foreach ( get_post_types() as $post_type ) {
+		if ( post_type_supports( $post_type, 'comments' ) ) {
+			remove_post_type_support( $post_type, 'comments' );
+			remove_post_type_support( $post_type, 'trackbacks' );
+		}
+	}
+
+	add_filter( 'comments_open', '__return_false', 20, 2 );
+	add_filter( 'pings_open', '__return_false', 20, 2 );
+	add_filter( 'comments_array', '__return_empty_array', 10, 2 );
+}
+add_action( 'init', 'theme_prefix_disable_comments_sitewide' );
+
+/**
+ * Remove Endpoints for Comments in REST API.
+ *
+ * @param array $endpoints Existing REST API endpoints.
+ * @return array Modified REST API endpoints.
+ */
+function theme_prefix_remove_comments_rest_endpoints( $endpoints ) {
+	if ( isset( $endpoints['/wp/v2/comments'] ) ) {
+		unset( $endpoints['/wp/v2/comments'] );
+	}
+	return $endpoints;
+}
+add_filter( 'rest_endpoints', 'theme_prefix_remove_comments_rest_endpoints' );

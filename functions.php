@@ -12,8 +12,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Define the theme version if not already defined.
-if ( ! defined( 'TH_VERSION' ) ) {
-	define( 'TH_VERSION', '1.0' );
+if ( ! defined( 'THEME_VERSION' ) ) {
+	define( 'THEME_VERSION', '1.0' );
 }
 // Constants.
 define( 'THEME_TEMP_URI', get_template_directory_uri() );
