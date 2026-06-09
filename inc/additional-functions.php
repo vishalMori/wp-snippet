@@ -13,7 +13,7 @@
  * Upload SVG files.
  *
  * @param array $mimes Data types.
- * @return return mimes file types.
+ * @return array Return updated mimes file types.
  */
 function theme_prefix_svg_mime_types( $mimes ) {
 	$mimes['svg'] = 'image/svg+xml';
@@ -87,7 +87,6 @@ add_action( 'widgets_init', 'theme_prefix_widgets_init' );
  * Disable auto paragraph formatting in Contact Form 7.
  */
 add_filter( 'wpcf7_autop_or_not', '__return_false' );
-
 
 /**
  * Theme Parse blocks.

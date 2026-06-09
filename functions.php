@@ -14,9 +14,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! defined( 'TH_VERSION' ) ) {
+if ( ! defined( 'THEME_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'TH_VERSION', '1.0' );
+	define( 'THEME_VERSION', '1.0' );
 }
 
 define( 'THEME_TEMP_URI', get_template_directory_uri() );
