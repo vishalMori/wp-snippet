@@ -56,7 +56,7 @@ function theme_prefix_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'header-menu' => esc_html__( 'Header Menu', 'theme_textdomain' ),
+			'header-menu' => esc_html__( 'Header Menu', 'theme-textdomain' ),
 		)
 	);
 
@@ -123,7 +123,7 @@ add_action( 'after_setup_theme', 'theme_prefix_content_width', 0 );
  *
  * @see https://developer.wordpress.org/reference/functions/register_block_type/#comment-6248
  */
-function theme_block_init() {
+function theme_prefix_block_init() {
 	$build_dir = __DIR__ . '/build';
 
 	if ( is_dir( $build_dir ) ) {
@@ -140,7 +140,7 @@ function theme_block_init() {
 		}
 	}
 }
-add_action( 'init', 'theme_block_init' );
+add_action( 'init', 'theme_prefix_block_init' );
 
 /**
  * Adding new (custom) block categories.
@@ -148,17 +148,17 @@ add_action( 'init', 'theme_block_init' );
  * @param array $block_categories Array of categories for block types.
  * @return array Modified array of categories for block types.
  */
-function theme_register_layout_category( $block_categories ) {
+function theme_prefix_register_layout_category( $block_categories ) {
 	$new_categories = array(
 		array(
 			'slug'  => 'custom-blocks',
-			'title' => esc_html__( 'General Section', 'theme_textdomain' ),
+			'title' => esc_html__( 'General Section', 'theme-textdomain' ),
 		),
 	);
 
 	return array_merge( $new_categories, $block_categories );
 }
-add_filter( 'block_categories_all', 'theme_register_layout_category', 10, 1 );
+add_filter( 'block_categories_all', 'theme_prefix_register_layout_category', 10, 1 );
 
 /**
  * Include additional custom theme functions.

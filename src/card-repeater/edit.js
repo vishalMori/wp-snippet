@@ -74,11 +74,11 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 	return (
 		<>
 			<InspectorControls>
-				<Panel header={__("Setting", "theme")}>
+				<Panel header={__("Setting", "theme-textdomain")}>
 					<React.Fragment key=".0">
 						<PanelBody
 							className="theme-head"
-							title={__("Genaral", "theme")}
+							title={__("Genaral", "theme-textdomain")}
 						>
 							<PanelRow>
 								<BackgroundSection
@@ -185,7 +185,7 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 									<div className="pt-6 pb-7 px-6 text-center">
 										<RichText
 											tagName="h3"
-											placeholder={__("Partner Name", "theme")}
+											placeholder={__("Partner Name", "theme-textdomain")}
 											value={partner.name}
 											style={{ ...heading }}
 											onChange={(value) =>
@@ -196,7 +196,7 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 										<RichText
 											tagName="p"
 											value={partner.description}
-											placeholder={__("Description", "theme")}
+											placeholder={__("Description", "theme-textdomain")}
 											style={{ ...paragraph }}
 											onChange={(value) =>
 												handleInputField(value, index, "description")
@@ -210,7 +210,7 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 					</ul>
 					<div style={{ textAlign: "center", paddingTop: "50px" }}>
 						<Button isPressed variant="primary" onClick={addItem}>
-							{__("Add Partner", "theme")}
+							{__("Add Partner", "theme-textdomain")}
 						</Button>
 					</div>
 				</div>
