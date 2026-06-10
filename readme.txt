@@ -2,7 +2,7 @@
 
 **Version:** 1.0  
 **Author:** [Theme_Author](Author_URL)
-**Text Domain:** `theme_text-domain`
+**Text Domain:** `theme-textdomain`
 **License:** [GNU General Public License v2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 
 ---

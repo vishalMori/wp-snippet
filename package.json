@@ -1,7 +1,7 @@
 {
-	"name": "theme_name",
+	"name": "theme-textdomain",
 	"version": "1.0.0",
-	"description": "theme_name",
+	"description": "theme-textdomain",
 	"main": "tailwind.config.js",
 	"scripts": {
 		"dev": "tailwindcss -i ./assets/css/style.css -o assets/css/main.css --minify --watch",
