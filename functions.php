@@ -96,10 +96,46 @@ function theme_prefix_content_width() {
 add_action( 'after_setup_theme', 'theme_prefix_content_width', 0 );
 
 /**
+ * Remove jQuery Migrate.
+ *
+ * @param object $scripts Array of script handles.
+ */
+function theme_prefix_remove_jquery_migrate( $scripts ) {
+	if ( ! is_admin() && isset( $scripts->registered['jquery'] ) ) {
+		$scripts->registered['jquery']->deps = array_diff(
+			$scripts->registered['jquery']->deps,
+			array( 'jquery-migrate' )
+		);
+	}
+}
+add_action( 'wp_default_scripts', 'theme_prefix_remove_jquery_migrate' );
+
+/**
+ * Add preconnect resource hints for Google Fonts.
+ *
+ * @param array  $urls           URLs to print for resource hints.
+ * @param string $relation_type  The relation type the URLs are printed for.
+ */
+function theme_prefix_google_fonts_resource_hints( $urls, $relation_type ) {
+	if ( 'preconnect' === $relation_type ) {
+		$urls[] = array(
+			'href' => 'https://fonts.googleapis.com',
+		);
+		$urls[] = array(
+			'href'        => 'https://fonts.gstatic.com',
+			'crossorigin' => 'anonymous',
+		);
+	}
+	return $urls;
+}
+add_filter( 'wp_resource_hints', 'theme_prefix_google_fonts_resource_hints', 10, 2 );
+
+/**
  * Include additional custom theme functions.
  */
 $additional_functions  = THEME_TEMP_DIR . '/includes/additional-functions.php';
 $security_enhancements = THEME_TEMP_DIR . '/includes/security-enhancements.php';
+
 if ( file_exists( $additional_functions ) ) {
 	require_once $additional_functions;
 }
