@@ -1,0 +1,44 @@
+/*
+Theme Name: Theme_Name
+Author: Theme_Author
+Author URI: Author_URL
+Description: Custom Theme Description.
+Requires at least: Your WordPress Version
+Tested up to: WordPress Version
+Requires PHP: 8.2 (Recomanded)
+Version: 1.0
+License: GNU General Public License or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: theme-textdomain
+Tags: add your custom tags.
+*/
+
+.submitting button[type="submit"] {
+  pointer-events: none;
+}
+
+.wpcf7 form.invalid .wpcf7-response-output,
+.wpcf7 form.unaccepted .wpcf7-response-output,
+.wpcf7 form.payment-required .wpcf7-response-output {
+  display: none;
+}
+
+/* Remove unwanted inline behavior */
+.wpcf7-form-control-wrap {
+  display: contents;
+}
+
+/* Remove CF7 list styling */
+.wpcf7-acceptance .wpcf7-list-item {
+  margin: 0;
+}
+
+/* Align checkbox + label */
+.form-check {
+  display: flex;
+  align-items: flex-start;
+}
+
+.form-check-input {
+  margin-top: 0.25rem;
+}
