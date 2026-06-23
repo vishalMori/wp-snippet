@@ -63,7 +63,7 @@ function theme_prefix_block_categories( $categories ) {
 		array(
 			array(
 				'slug'  => 'theme-textdomain',
-				'title' => __( 'Theme_Name', 'theme-textdomain' ),
+				'title' => __( 'Theme_Title', 'theme-textdomain' ),
 			),
 		),
 		$categories
