@@ -1,6 +1,6 @@
 <?php
 /**
- * Additional functions for the Intech theme.
+ * Additional functions for theme.
  *
  * @package Theme_Name
  */
@@ -24,7 +24,7 @@ function theme_prefix_enqueue_scripts() {
 	// Enqueue Styles.
 	if ( ! is_admin() ) {
 		wp_enqueue_script(
-			'intech-setting',
+			'theme-textdomain-setting',
 			THEME_TEMP_URI . '/assets/js/setting.js',
 			array( 'jquery' ),
 			THEME_ASSET_VERSION,

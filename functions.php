@@ -1,6 +1,6 @@
 <?php
 /**
- * Intech Theme functions and definitions.
+ * Theme functions and definitions.
  *
  * @package Theme_Name
  */
@@ -120,7 +120,7 @@ add_action( 'wp_head', 'theme_prefix_google_fonts_preload', 5 );
  * @return string Modified tag for deferred handles, original otherwise.
  */
 function theme_prefix_deferred_style_loader_tag( $html, $handle ) {
-	$deferred_handles = array( 'intech-fancybox' );
+	$deferred_handles = array();
 	if ( ! in_array( $handle, $deferred_handles, true ) ) {
 		return $html;
 	}
@@ -137,8 +137,8 @@ add_filter( 'style_loader_tag', 'theme_prefix_deferred_style_loader_tag', 10, 2 
  */
 function theme_prefix_enqueue_block_editor_assets() {
 	// Enqueue editor styles.
-	wp_enqueue_style( 'intech-editor-style', THEME_TEMP_URI . '/assets/css/style.css', array(), '1.0.0' );
-	wp_enqueue_style( 'intech-editor-custom', THEME_TEMP_URI . '/assets/css/editor.css', array(), '1.0.0' );
+	wp_enqueue_style( 'theme-textdomain-editor-style', THEME_TEMP_URI . '/assets/css/style.css', array(), '1.0.0' );
+	wp_enqueue_style( 'theme-textdomain-editor-custom', THEME_TEMP_URI . '/assets/css/editor.css', array(), '1.0.0' );
 }
 add_action( 'enqueue_block_editor_assets', 'theme_prefix_enqueue_block_editor_assets' );
 
