@@ -48,12 +48,7 @@ function theme_prefix_theme_setup() {
 	// Register Navigation Menus.
 	register_nav_menus(
 		array(
-			'primary'         => esc_html__( 'Primary Menu', 'theme-textdomain' ),
-			'footer_products' => esc_html__( 'Footer Products', 'theme-textdomain' ),
-			'footer_services' => esc_html__( 'Footer Services', 'theme-textdomain' ),
-			'footer_industry' => esc_html__( 'Footer Industry', 'theme-textdomain' ),
-			'footer_about'    => esc_html__( 'Footer About', 'theme-textdomain' ),
-			'footer_bottom'   => esc_html__( 'Footer Bottom', 'theme-textdomain' ),
+			'primary' => esc_html__( 'Primary Menu', 'theme-textdomain' ),
 		)
 	);
 }
@@ -133,17 +128,6 @@ function theme_prefix_deferred_style_loader_tag( $html, $handle ) {
 add_filter( 'style_loader_tag', 'theme_prefix_deferred_style_loader_tag', 10, 2 );
 
 /**
- * Enqueue Block Editor Assets
- */
-function theme_prefix_enqueue_block_editor_assets() {
-	// Enqueue editor styles.
-	wp_enqueue_style( 'theme-textdomain-editor-style', THEME_TEMP_URI . '/assets/css/style.css', array(), '1.0.0' );
-	wp_enqueue_style( 'theme-textdomain-editor-custom', THEME_TEMP_URI . '/assets/css/editor.css', array(), '1.0.0' );
-}
-add_action( 'enqueue_block_editor_assets', 'theme_prefix_enqueue_block_editor_assets' );
-
-
-/**
  * ACF Options Page
  */
 if ( function_exists( 'acf_add_options_page' ) ) {
@@ -181,4 +165,4 @@ require THEME_TEMP_DIR . '/inc/acf-blocks.php';
 
 require THEME_TEMP_DIR . '/inc/additional-functions.php';
 
-require THEME_TEMP_DIR . '/inc/security-enhancements';
+require THEME_TEMP_DIR . '/inc/security-enhancements.php';

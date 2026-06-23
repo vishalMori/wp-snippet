@@ -5,6 +5,11 @@
  * @package Theme_Name
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Allow SVG file uploads.
  *
@@ -44,6 +49,16 @@ function theme_prefix_enqueue_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'theme_prefix_enqueue_scripts' );
 add_action( 'enqueue_block_assets', 'theme_prefix_enqueue_scripts' );
+
+/**
+ * Enqueue Block Editor Assets
+ */
+function theme_prefix_enqueue_block_editor_assets() {
+	// Enqueue editor styles.
+	wp_enqueue_style( 'theme-textdomain-editor-style', THEME_TEMP_URI . '/assets/css/style.css', array(), THEME_VERSION );
+	wp_enqueue_style( 'theme-textdomain-editor-custom', THEME_TEMP_URI . '/assets/css/editor.css', array(), THEME_VERSION );
+}
+add_action( 'enqueue_block_editor_assets', 'theme_prefix_enqueue_block_editor_assets' );
 
 /**
  * Handle ACF block preview rendering.

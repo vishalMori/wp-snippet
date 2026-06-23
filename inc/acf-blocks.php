@@ -7,6 +7,7 @@
  * @package Theme_Name
  */
 
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
